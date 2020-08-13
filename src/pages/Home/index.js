@@ -12,6 +12,7 @@ class Home extends React.Component{
 
         this.state ={
             user: '',
+            userName: {},
             repos: []
 
         }
@@ -22,11 +23,18 @@ class Home extends React.Component{
     }
 
     searchUser = async () =>{
-        const {user} = this.state;
+        const {user, userName} = this.state;
         
         if(user){
-            const response = await api.get(`/users/${user}`)
-            console.log(response)
+            
+            try{
+                const response = await api.get(`/users/${user}`)
+                this.setState({userName: response.data})
+
+            }catch{
+                console.log('usuário não encontrado')
+            }
+            // console.log(response.data)
         }else{
             console.log("erro")
         }
@@ -34,8 +42,8 @@ class Home extends React.Component{
 
 
     render(){
-        const {user} = this.state;
-        // console.log(user)
+        const {user, userName} = this.state;
+        
 
         return(
             <main>
