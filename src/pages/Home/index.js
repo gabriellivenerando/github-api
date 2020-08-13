@@ -6,46 +6,43 @@ import Search from '../../components/Search';
 import './home.css';
 
 
-class Home extends React.Component{
-    constructor(){
+class Home extends React.Component {
+    constructor() {
         super()
 
-        this.state ={
+        this.state = {
             user: '',
             userName: {},
+            error: '',
             repos: []
 
         }
     }
 
-    cacthUser = e =>{
-        this.setState({user: e.target.value}) 
+    cacthUser = e => {
+        this.setState({ user: e.target.value })
     }
 
-    searchUser = async () =>{
-        const {user, userName} = this.state;
-        
-        if(user){
-            
-            try{
-                const response = await api.get(`/users/${user}`)
-                this.setState({userName: response.data})
+    searchUser = async () => {
+        const { user, userName, error} = this.state;
 
-            }catch{
-                console.log('usuário não encontrado')
-            }
-            // console.log(response.data)
-        }else{
-            console.log("erro")
+        if (user) {
+
+            await api.get(`/users/${user}`)
+                .then(res => this.setState({ userName: res.data, error: '', user: '' }))
+                .catch(e => this.setState({ error: "Usuário não encontrado" }))
+            
+        } else {
+            this.setState({ error: 'Digite um usuário'})
         }
     }
 
 
-    render(){
-        const {user, userName} = this.state;
-        
+    render() {
+        const { user, userName, error } = this.state;
 
-        return(
+
+        return (
             <main>
                 <Title
                     className=""
@@ -63,6 +60,10 @@ class Home extends React.Component{
                     onClick={this.searchUser}
                     src=""
                 />
+
+                {error && <h3>{error}</h3>}
+                {userName.login}
+
             </main>
         )
     }
