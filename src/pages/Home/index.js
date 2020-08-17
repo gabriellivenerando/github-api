@@ -53,29 +53,34 @@ class Home extends React.Component {
 
     render() {
         const { user, userName, error } = this.state;
-        
+
 
         return (
             <main>
-                <Title
-                    className=""
-                    text="Github Search"
-                />
-                <Input
-                    placeholder="Digite o nome do usuário que seja ser encontrado"
-                    type="text"
-                    className=""
-                    onChange={this.cacthUser}
-                    value={user}
-                />
-                <Search
-                    className=""
-                    onClick={this.searchUser}
-                    src=""
-                />
+                <section>
+                    <Title
+                        className=""
+                        text="Github Search"
+                    />
 
-                {error && <h3>{error}</h3>}
-                
+                    <div className="search__container">
+                        <Input
+                            placeholder="Digite o nome do usuário que seja ser encontrado"
+                            type="text"
+                            className=""
+                            onChange={this.cacthUser}
+                            value={user}
+                        />
+                        <Search
+                            className=""
+                            onClick={this.searchUser}
+                            src=""
+                        />
+
+                        {error && <h3>{error}</h3>}
+                    </div>
+
+                </section>
 
             </main>
         )
