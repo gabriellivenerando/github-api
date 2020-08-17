@@ -57,7 +57,7 @@ class Home extends React.Component {
 
         return (
             <main>
-                <section>
+                <section className="">
                     <Title
                         className=""
                         text="Github Search"
