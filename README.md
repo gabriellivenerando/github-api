@@ -9,7 +9,7 @@
 
 
 
-<strong>Status do Projeto:</strong> Em desenvolvimento :warning:
+<strong>Status do Projeto:</strong> Done :white_check_mark:
 
 
 
