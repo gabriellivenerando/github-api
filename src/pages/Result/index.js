@@ -15,7 +15,8 @@ class Result extends React.Component {
         this.state = {
             repos: [],
             infos: {},
-            hello: {}
+
+
         }
 
     }
@@ -23,19 +24,18 @@ class Result extends React.Component {
     componentDidMount = async () => {
         const { login } = this.props.history.location.state.data;
         const response = await api.get(`/users/${login}/repos`);
-      
-        
-        
-        
+
+
+
+
+
 
 
         this.setState({ repos: response.data, infos: this.props.history.location.state.data })
     }
 
     render() {
-        const { repos, infos} = this.state;
-        console.log(repos)
-
+        const { repos, infos } = this.state;
 
         return (
             <main>
@@ -44,7 +44,7 @@ class Result extends React.Component {
                         <div className="biography__container">
 
                             <div className="biography__avatar">
-                                <img className="avatar__img" src={infos.avatar_url}></img>
+                                <img className="avatar__img" src={infos.avatar_url} alt="avatar"></img>
                             </div>
 
                             <div className="biograpphy__infos">
@@ -58,22 +58,22 @@ class Result extends React.Component {
                         <div className="github__infos">
 
                             <div className="location__container">
-                                <img src={LocationIcon} />
+                                <img src={LocationIcon} alt="location icon"></img>
                                 <p>{infos.location}</p>
                             </div>
 
                             <div className="repositorie__container">
-                                <img src={RepositorieIcon} />
+                                <img src={RepositorieIcon} alt="repositorie icon"></img>
                                 <p>{infos.public_repos}</p>
                             </div>
 
                             <div className="followers__container">
-                                <img src={FollowersIcon} />
+                                <img src={FollowersIcon} alt="followers icon"></img>
                                 <p>{infos.followers}</p>
                             </div>
 
                             <div className="following__container">
-                                <img src={FollowersIcon} />
+                                <img src={FollowersIcon} alt="followers icon"></img>
                                 <p>{infos.following}</p>
                             </div>
                         </div>
@@ -85,7 +85,10 @@ class Result extends React.Component {
                             return (
                                 <div>
                                     <h4 key={`repo_${index + 1}`}>{repo.name}</h4>
-                                    <img src={StarIcon} alt="start icon"></img>
+                                    <div className="repos__container--stars">
+                                        <img src={StarIcon} alt="start icon"></img>
+                                        <p>{repo.stargazers_count}</p>
+                                    </div>
                                 </div>
                             )
 

@@ -61,3 +61,15 @@
     font-family: 'Playfair Display', serif;
     font-size: 35px;
 }
+
+.repos__container--stars{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    width: 55px;
+}
+
+.repos__container--stars > p{
+    font-size: 20px;
+    margin-top: 3px;
+}
