@@ -15,8 +15,6 @@ class Result extends React.Component {
         this.state = {
             repos: [],
             infos: {},
-
-
         }
 
     }
@@ -26,13 +24,10 @@ class Result extends React.Component {
         const response = await api.get(`/users/${login}/repos`);
 
 
-
-
-
-
-
         this.setState({ repos: response.data, infos: this.props.history.location.state.data })
     }
+
+
 
     render() {
         const { repos, infos } = this.state;
@@ -82,6 +77,9 @@ class Result extends React.Component {
 
                     <div className="repos__container">
                         {repos.map((repo, index) => {
+
+
+
                             return (
                                 <div>
                                     <h4 key={`repo_${index + 1}`}>{repo.name}</h4>
