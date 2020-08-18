@@ -78,8 +78,8 @@ class Home extends React.Component {
                             src={SearchIcon}
                         />
 
-                        {error && <h3>{error}</h3>}
                     </div>
+                        {error && <h3 className="error__message">{error}</h3>}
 
                 </section>
 

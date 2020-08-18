@@ -14,7 +14,8 @@ class Result extends React.Component {
 
         this.state = {
             repos: [],
-            infos: {}
+            infos: {},
+            hello: {}
         }
 
     }
@@ -22,14 +23,18 @@ class Result extends React.Component {
     componentDidMount = async () => {
         const { login } = this.props.history.location.state.data;
         const response = await api.get(`/users/${login}/repos`);
+      
+        
+        
+        
 
 
         this.setState({ repos: response.data, infos: this.props.history.location.state.data })
     }
 
     render() {
-        const { repos, infos } = this.state;
-        console.log(repos.owner)
+        const { repos, infos} = this.state;
+        console.log(repos)
 
 
         return (

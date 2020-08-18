@@ -8,3 +8,7 @@
     margin: auto;
     width: 367px;
 }
+
+.error__message{
+    text-align: center;
+}

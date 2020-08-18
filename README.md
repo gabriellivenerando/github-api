@@ -1,4 +1,4 @@
-<h1 align="center"> Github API :car:</h1> 
+<h1 align="center"> Github API :computer:</h1> 
 
 
 ### Descrição do Projeto :open_file_folder:
