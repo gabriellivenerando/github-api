@@ -2,7 +2,7 @@
 
 
 .container {
-    background-color: #dfdfdf;
+    /* background-color: #dfdfdf; */
     display: flex;
     justify-content: center;
 }
@@ -25,6 +25,7 @@
 
 .biograpphy__infos>h2, .biograpphy__infos>p {
     text-align: center;
+    padding: 10px;
 }
 
 .github__infos {
@@ -35,7 +36,8 @@
 .location__container {
     display: flex;
     justify-content: space-between;
-    width: 179px;
+    margin-left: 5px;
+    width: 177px;
 }
 
 .repositorie__container, .followers__container, .following__container {
@@ -53,10 +55,10 @@
     margin-top: 50px;
     width: 500px;
 }
-
+/* 
 .repos__container>div {
     display: flex;
-}
+} */
 
 .repos__container>div>h4 {
     color: rgb(248, 177, 227);

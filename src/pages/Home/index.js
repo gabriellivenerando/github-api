@@ -3,6 +3,7 @@ import api from '../../api';
 import Title from '../../components/Title'
 import Input from '../../components/Input';
 import Search from '../../components/Search';
+import SearchIcon from '../../assets/icons/search-icon.svg'
 import './home.css';
 
 
@@ -57,24 +58,24 @@ class Home extends React.Component {
 
         return (
             <main>
-                <section className="">
+                <section className="home__container">
                     <Title
-                        className=""
+                        className="title"
                         text="Github Search"
                     />
 
                     <div className="search__container">
                         <Input
-                            placeholder="Digite o nome do usuário que seja ser encontrado"
+                            placeholder="Digite o nome do usuário que deseja encontrar"
                             type="text"
-                            className=""
+                            className="input__search"
                             onChange={this.cacthUser}
                             value={user}
                         />
                         <Search
-                            className=""
+                            className="btn__search"
                             onClick={this.searchUser}
-                            src=""
+                            src={SearchIcon}
                         />
 
                         {error && <h3>{error}</h3>}

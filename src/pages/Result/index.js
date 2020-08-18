@@ -29,7 +29,7 @@ class Result extends React.Component {
 
     render() {
         const { repos, infos } = this.state;
-        console.log(repos)
+        console.log(repos.owner)
 
 
         return (
@@ -79,8 +79,8 @@ class Result extends React.Component {
                         {repos.map((repo, index) => {
                             return (
                                 <div>
-                                    <img src={StarIcon} />
                                     <h4 key={`repo_${index + 1}`}>{repo.name}</h4>
+                                    <img src={StarIcon} alt="start icon"></img>
                                 </div>
                             )
 
